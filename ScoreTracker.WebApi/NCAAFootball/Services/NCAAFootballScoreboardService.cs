@@ -1,5 +1,4 @@
 using ScoreTracker.WebApi.Interfaces;
-using ScoreTracker.WebApi.Models;
 using ScoreTracker.WebApi.NCAAFootball.Models;
 
 namespace ScoreTracker.WebApi.NCAAFootball.Services;

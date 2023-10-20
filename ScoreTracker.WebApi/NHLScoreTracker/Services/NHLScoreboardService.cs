@@ -1,12 +1,11 @@
 using ScoreTracker.WebApi.Interfaces;
-using ScoreTracker.WebApi.Models;
 using ScoreTracker.WebApi.NHLScoreTracker.Models;
 
 namespace ScoreTracker.WebApi.NHLScoreTracker.Services;
 
 public sealed class NHLScoreboardService : IScoreboardService<NHLScoreboard>
 {
-    private HttpClient _client;
+    private readonly HttpClient _client;
 
     public NHLScoreboardService(HttpClient client)
     {

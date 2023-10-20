@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ScoreTracker.WebApi.Interfaces;
-using ScoreTracker.WebApi.Models;
 using ScoreTracker.WebApi.NHLScoreTracker.Models;
-using ScoreTracker.WebApi.NHLScoreTracker.Services;
 
 namespace ScoreTracker.WebApi.NHLScoreTracker.Controllers;
 
