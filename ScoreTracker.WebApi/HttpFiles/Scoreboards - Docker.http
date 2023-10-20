@@ -1,0 +1,8 @@
+### MLB Tracker
+GET localhost:8080/api/MLBTracker
+
+### NBA Tracker
+GET localhost:8080/api/NBATracker
+
+### NHL Tracker
+GET localhost:8080/api/NHLTracker

@@ -1,0 +1,12 @@
+###
+GET http://localhost:5005/api/MLBTracker
+
+###
+GET http://localhost:5005/api/NBATracker
+
+###
+GET http://localhost:5005/api/NCAAFootballTracker
+
+###
+GET http://localhost:5005/api/NHLTracker
+
