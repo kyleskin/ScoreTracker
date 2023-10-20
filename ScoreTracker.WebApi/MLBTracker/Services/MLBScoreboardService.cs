@@ -12,11 +12,11 @@ public class MLBScoreboardService : IScoreboardService<MLBScoreboard>
         _client = client;
     }
 
-    public async Task<MLBScoreboard> GetScoreboardAsync()
+    public async Task<MLBScoreboard> GetTodaysScoreboardAsync()
     {
-        var today = DateTime.Now.ToString("yyyy-MM-dd");
+        var today = DateTime.Now.ToString("yyyyMMdd");
         
-        var res = await _client.GetAsync($"apis/site/v2/sports/baseball/mlb/scoreboard?{today}",
+        var res = await _client.GetAsync($"apis/site/v2/sports/baseball/mlb/scoreboard?dates={today}",
             HttpCompletionOption.ResponseHeadersRead);
 
         res.EnsureSuccessStatusCode();

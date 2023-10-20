@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using ScoreTracker.WebApi.Interfaces;
-using ScoreTracker.WebApi.NFL.Models;
+using ScoreTracker.WebApi.NFLTracker.Models;
 
-namespace ScoreTracker.WebApi.NFL.Controllers;
+namespace ScoreTracker.WebApi.NFLTracker.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -18,6 +18,6 @@ public class NFLTrackerController : ControllerBase
     [HttpGet]
     public async Task<NFLScoreboard> Index()
     {
-        return await _scoreboardService.GetScoreboardAsync();
+        return await _scoreboardService.GetTodaysScoreboardAsync();
     }
 }

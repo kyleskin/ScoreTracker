@@ -1,14 +1,14 @@
 using ScoreTracker.WebApi.Interfaces;
 using ScoreTracker.WebApi.MLBTracker.Models;
 using ScoreTracker.WebApi.MLBTracker.Services;
-using ScoreTracker.WebApi.NBAScoreTracker.Models;
-using ScoreTracker.WebApi.NBAScoreTracker.Services;
-using ScoreTracker.WebApi.NCAAFootball.Models;
-using ScoreTracker.WebApi.NCAAFootball.Services;
-using ScoreTracker.WebApi.NFL.Models;
-using ScoreTracker.WebApi.NFL.Services;
-using ScoreTracker.WebApi.NHLScoreTracker.Models;
-using ScoreTracker.WebApi.NHLScoreTracker.Services;
+using ScoreTracker.WebApi.NBATracker.Models;
+using ScoreTracker.WebApi.NBATracker.Services;
+using ScoreTracker.WebApi.NCAAFootballTracker.Models;
+using ScoreTracker.WebApi.NCAAFootballTracker.Services;
+using ScoreTracker.WebApi.NFLTracker.Models;
+using ScoreTracker.WebApi.NFLTracker.Services;
+using ScoreTracker.WebApi.NHLTracker.Models;
+using ScoreTracker.WebApi.NHLTracker.Services;
 
 namespace ScoreTracker.WebApi.Helpers;
 

@@ -1,4 +1,4 @@
-namespace ScoreTracker.WebApi.NCAAFootball.Models;
+namespace ScoreTracker.WebApi.NCAAFootballTracker.Models;
 
 public sealed class Event
 {

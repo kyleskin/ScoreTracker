@@ -1,4 +1,4 @@
-namespace ScoreTracker.WebApi.NHLScoreTracker.Models;
+namespace ScoreTracker.WebApi.NHLTracker.Models;
 
 public sealed class Team
 {

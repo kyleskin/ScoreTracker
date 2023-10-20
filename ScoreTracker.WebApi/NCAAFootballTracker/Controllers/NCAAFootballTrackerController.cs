@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using ScoreTracker.WebApi.Interfaces;
-using ScoreTracker.WebApi.NCAAFootball.Models;
+using ScoreTracker.WebApi.NCAAFootballTracker.Models;
 
-namespace ScoreTracker.WebApi.NCAAFootball.Controllers;
+namespace ScoreTracker.WebApi.NCAAFootballTracker.Controllers;
 
 [ApiController]
 [Route("/api/[controller]")]
@@ -18,6 +18,6 @@ public class NCAAFootballTrackerController : ControllerBase
     [HttpGet]
     public async Task<NCAAFootballScoreboard> Index()
     {
-        return await _scoreboardService.GetScoreboardAsync();
+        return await _scoreboardService.GetTodaysScoreboardAsync();
     }
 }

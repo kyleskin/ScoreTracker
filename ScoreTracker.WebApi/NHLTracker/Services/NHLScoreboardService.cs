@@ -1,7 +1,7 @@
 using ScoreTracker.WebApi.Interfaces;
-using ScoreTracker.WebApi.NHLScoreTracker.Models;
+using ScoreTracker.WebApi.NHLTracker.Models;
 
-namespace ScoreTracker.WebApi.NHLScoreTracker.Services;
+namespace ScoreTracker.WebApi.NHLTracker.Services;
 
 public sealed class NHLScoreboardService : IScoreboardService<NHLScoreboard>
 {
@@ -12,9 +12,11 @@ public sealed class NHLScoreboardService : IScoreboardService<NHLScoreboard>
         _client = client;
     }
 
-    public async Task<NHLScoreboard> GetScoreboardAsync()
+    public async Task<NHLScoreboard> GetTodaysScoreboardAsync()
     {
-        var res = await _client.GetAsync("/apis/site/v2/sports/hockey/nhl/scoreboard",
+        var today = DateTime.Now.ToString("yyyyMMdd");
+        
+        var res = await _client.GetAsync($"/apis/site/v2/sports/hockey/nhl/scoreboard?dates={today}",
             HttpCompletionOption.ResponseHeadersRead);
 
         res.EnsureSuccessStatusCode();

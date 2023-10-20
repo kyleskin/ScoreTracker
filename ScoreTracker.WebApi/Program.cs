@@ -1,15 +1,4 @@
 using ScoreTracker.WebApi.Helpers;
-using ScoreTracker.WebApi.Interfaces;
-using ScoreTracker.WebApi.MLBTracker.Models;
-using ScoreTracker.WebApi.MLBTracker.Services;
-using ScoreTracker.WebApi.NBAScoreTracker.Models;
-using ScoreTracker.WebApi.NBAScoreTracker.Services;
-using ScoreTracker.WebApi.NCAAFootball.Models;
-using ScoreTracker.WebApi.NCAAFootball.Services;
-using ScoreTracker.WebApi.NFL.Models;
-using ScoreTracker.WebApi.NFL.Services;
-using ScoreTracker.WebApi.NHLScoreTracker.Models;
-using ScoreTracker.WebApi.NHLScoreTracker.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

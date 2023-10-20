@@ -1,7 +1,7 @@
 using ScoreTracker.WebApi.Interfaces;
-using ScoreTracker.WebApi.NBAScoreTracker.Models;
+using ScoreTracker.WebApi.NBATracker.Models;
 
-namespace ScoreTracker.WebApi.NBAScoreTracker.Services;
+namespace ScoreTracker.WebApi.NBATracker.Services;
 
 public sealed class NBAScoreboardService : IScoreboardService<NBAScoreboard>
 {
@@ -12,9 +12,11 @@ public sealed class NBAScoreboardService : IScoreboardService<NBAScoreboard>
         _client = client;
     }
 
-    public async Task<NBAScoreboard> GetScoreboardAsync()
+    public async Task<NBAScoreboard> GetTodaysScoreboardAsync()
     {
-        var res = await _client.GetAsync("/apis/site/v2/sports/basketball/nba/scoreboard",
+        var today = DateTime.Now.ToString("yyyyMMdd");
+        
+        var res = await _client.GetAsync($"/apis/site/v2/sports/basketball/nba/scoreboard?dates={today}",
             HttpCompletionOption.ResponseHeadersRead);
 
         res.EnsureSuccessStatusCode();

@@ -17,6 +17,6 @@ public class MLBTrackerController : ControllerBase
 
     public async Task<MLBScoreboard> Index()
     {
-        return await _scoreboardService.GetScoreboardAsync();
+        return await _scoreboardService.GetTodaysScoreboardAsync();
     }
 }

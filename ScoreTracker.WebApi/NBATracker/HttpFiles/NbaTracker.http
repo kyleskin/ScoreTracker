@@ -1,5 +1,0 @@
-### GET
-https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json
-
-###
-GET http://localhost:5005/api/NBATracker

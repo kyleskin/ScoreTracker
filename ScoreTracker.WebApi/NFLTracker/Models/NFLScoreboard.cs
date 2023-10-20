@@ -1,4 +1,4 @@
-namespace ScoreTracker.WebApi.NFL.Models;
+namespace ScoreTracker.WebApi.NFLTracker.Models;
 
 public sealed class NFLScoreboard
 {

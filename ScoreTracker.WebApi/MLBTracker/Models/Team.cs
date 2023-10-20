@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
-
 namespace ScoreTracker.WebApi.MLBTracker.Models;
 
 public sealed class Team

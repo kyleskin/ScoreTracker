@@ -1,7 +1,7 @@
 using ScoreTracker.WebApi.Interfaces;
-using ScoreTracker.WebApi.NFL.Models;
+using ScoreTracker.WebApi.NFLTracker.Models;
 
-namespace ScoreTracker.WebApi.NFL.Services;
+namespace ScoreTracker.WebApi.NFLTracker.Services;
 
 public class NFLScoreboardService : IScoreboardService<NFLScoreboard>
 {
@@ -12,9 +12,11 @@ public class NFLScoreboardService : IScoreboardService<NFLScoreboard>
         _client = client;
     }
 
-    public async Task<NFLScoreboard> GetScoreboardAsync()
+    public async Task<NFLScoreboard> GetTodaysScoreboardAsync()
     {
-        var res = await _client.GetAsync("apis/site/v2/sports/football/nfl/scoreboard",
+        var today = DateTime.Now.ToString("yyyyMMdd");
+        
+        var res = await _client.GetAsync($"apis/site/v2/sports/football/nfl/scoreboard?dates={today}",
             HttpCompletionOption.ResponseHeadersRead);
 
         res.EnsureSuccessStatusCode();
