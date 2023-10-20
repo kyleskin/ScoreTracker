@@ -1,10 +1,13 @@
 using ScoreTracker.WebApi.Helpers;
+using ScoreTracker.WebApi.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoreboardServices();
 builder.Services.AddHttpClients();
+
+builder.Services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

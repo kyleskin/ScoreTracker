@@ -25,4 +25,9 @@ public class NCAAFootballScoreboardService : IScoreboardService<NCAAFootballScor
 
         return scoreboard ?? new NCAAFootballScoreboard();
     }
+
+    public Task<NCAAFootballScoreboard> GetThisWeeksScoreboardAsync()
+    {
+        throw new NotImplementedException();
+    }
 }

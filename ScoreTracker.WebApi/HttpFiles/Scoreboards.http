@@ -1,15 +1,34 @@
+### MLB ENDPOINTS
 ###
-GET http://localhost:5005/api/MLBTracker
+GET http://localhost:5005/api/MLBTracker/Scoreboard
 
+###
+GET http://localhost:5005/api/MLBTracker/WeeklyScoreboard
+
+
+
+### NBA ENDPOINTS
 ###
 GET http://localhost:5005/api/NBATracker
 
+
+
+### NCAA FOOTBALL ENDPOINTS
 ###
 GET http://localhost:5005/api/NCAAFootballTracker
 
-###
-GET http://localhost:5005/api/NFLTracker
 
+
+### NFL ENDPOINTS
+###
+GET http://localhost:5005/api/NFLTracker/Scoreboard
+
+###
+GET http://localhost:5005/api/NFLTracker/WeeklyScoreboard
+
+
+
+### NHL ENDPOINTS
 ###
 GET http://localhost:5005/api/NHLTracker
 

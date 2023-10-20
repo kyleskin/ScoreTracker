@@ -25,4 +25,9 @@ public sealed class NBAScoreboardService : IScoreboardService<NBAScoreboard>
         
         return scoreboard ?? new NBAScoreboard();
     }
+
+    public Task<NBAScoreboard> GetThisWeeksScoreboardAsync()
+    {
+        throw new NotImplementedException();
+    }
 }

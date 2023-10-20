@@ -5,7 +5,7 @@ using ScoreTracker.WebApi.NFLTracker.Models;
 namespace ScoreTracker.WebApi.NFLTracker.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/{controller}/{action}")]
 public class NFLTrackerController : ControllerBase
 {
     private readonly IScoreboardService<NFLScoreboard> _scoreboardService;
@@ -16,8 +16,14 @@ public class NFLTrackerController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<NFLScoreboard> Index()
+    public async Task<NFLScoreboard> Scoreboard()
     {
         return await _scoreboardService.GetTodaysScoreboardAsync();
+    }
+
+    [HttpGet]
+    public async Task<NFLScoreboard> WeeklyScoreboard()
+    {
+        return await _scoreboardService.GetThisWeeksScoreboardAsync();
     }
 }

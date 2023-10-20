@@ -5,7 +5,7 @@ using ScoreTracker.WebApi.MLBTracker.Models;
 namespace ScoreTracker.WebApi.MLBTracker.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/{controller}/{action}")]
 public class MLBTrackerController : ControllerBase
 {
     private readonly IScoreboardService<MLBScoreboard> _scoreboardService;
@@ -15,8 +15,15 @@ public class MLBTrackerController : ControllerBase
         _scoreboardService = scoreboardService;
     }
 
-    public async Task<MLBScoreboard> Index()
+    [HttpGet]
+    public async Task<MLBScoreboard> Scoreboard()
     {
         return await _scoreboardService.GetTodaysScoreboardAsync();
+    }
+
+    [HttpGet]
+    public async Task<MLBScoreboard> WeeklyScoreboard()
+    {
+        return await _scoreboardService.GetThisWeeksScoreboardAsync();
     }
 }
