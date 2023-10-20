@@ -11,4 +11,4 @@ GET http://localhost:8080/api/NCAAFootballTracker
 GET http://localhost:8080/api/NFLTracker
 
 ###
-GET http://localhost:8080/api/NHLTrackerHLTracker
+GET http://localhost:8080/api/NHLTracker
