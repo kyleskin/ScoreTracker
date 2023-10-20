@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScoreTracker.WebApi", "ScoreTracker.WebApi\ScoreTracker.WebApi.csproj", "{F3A8DA7D-C0F2-42BB-9D65-D10BD04FF6FC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{056FDA73-E3FE-4560-93ED-FBC81993116D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{48E0E63E-8430-403C-9ED5-3525E9713D97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScoreTracker.WebApi", "src\ScoreTracker.WebApi\ScoreTracker.WebApi.csproj", "{49E0FC7E-AAFE-461F-835D-95644C5FF3E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +12,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F3A8DA7D-C0F2-42BB-9D65-D10BD04FF6FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3A8DA7D-C0F2-42BB-9D65-D10BD04FF6FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3A8DA7D-C0F2-42BB-9D65-D10BD04FF6FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F3A8DA7D-C0F2-42BB-9D65-D10BD04FF6FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49E0FC7E-AAFE-461F-835D-95644C5FF3E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E0FC7E-AAFE-461F-835D-95644C5FF3E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E0FC7E-AAFE-461F-835D-95644C5FF3E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E0FC7E-AAFE-461F-835D-95644C5FF3E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{49E0FC7E-AAFE-461F-835D-95644C5FF3E9} = {056FDA73-E3FE-4560-93ED-FBC81993116D}
 	EndGlobalSection
 EndGlobal
