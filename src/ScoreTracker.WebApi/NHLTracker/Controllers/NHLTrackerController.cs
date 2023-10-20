@@ -4,7 +4,7 @@ using ScoreTracker.WebApi.NHLTracker.Models;
 
 namespace ScoreTracker.WebApi.NHLTracker.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/{controller}/{action}")]
 [ApiController]
 public class NHLTrackerController : ControllerBase
 {
@@ -16,8 +16,14 @@ public class NHLTrackerController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<NHLScoreboard> Index()
+    public async Task<NHLScoreboard> Scoreboard()
     {
         return await _nhlScoreboardService.GetTodaysScoreboardAsync();
+    }
+
+    [HttpGet]
+    public async Task<NHLScoreboard> WeeklyScoreboard()
+    {
+        return await _nhlScoreboardService.GetThisWeeksScoreboardAsync();
     }
 }

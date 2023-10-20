@@ -5,7 +5,7 @@ using ScoreTracker.WebApi.NCAAFootballTracker.Models;
 namespace ScoreTracker.WebApi.NCAAFootballTracker.Controllers;
 
 [ApiController]
-[Route("/api/[controller]")]
+[Route("/api/{controller}/{action}")]
 public class NCAAFootballTrackerController : ControllerBase
 {
     private readonly IScoreboardService<NCAAFootballScoreboard> _scoreboardService;
@@ -16,8 +16,14 @@ public class NCAAFootballTrackerController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<NCAAFootballScoreboard> Index()
+    public async Task<NCAAFootballScoreboard> Scoreboard()
     {
         return await _scoreboardService.GetTodaysScoreboardAsync();
+    }
+
+    [HttpGet]
+    public async Task<NCAAFootballScoreboard> WeeklyScoreboard()
+    {
+        return await _scoreboardService.GetThisWeeksScoreboardAsync();
     }
 }
