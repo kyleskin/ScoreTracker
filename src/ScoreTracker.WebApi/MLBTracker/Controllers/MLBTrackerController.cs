@@ -16,14 +16,14 @@ public class MLBTrackerController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<MLBScoreboard> Scoreboard()
+    public async Task<IActionResult> Scoreboard()
     {
-        return await _scoreboardService.GetTodaysScoreboardAsync();
+        return Ok(await _scoreboardService.GetTodaysScoreboardAsync());
     }
 
     [HttpGet]
-    public async Task<MLBScoreboard> WeeklyScoreboard()
+    public async Task<IActionResult> WeeklyScoreboard()
     {
-        return await _scoreboardService.GetThisWeeksScoreboardAsync();
+        return Ok(await _scoreboardService.GetThisWeeksScoreboardAsync());
     }
 }
