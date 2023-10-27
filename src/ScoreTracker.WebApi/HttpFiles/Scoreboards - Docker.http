@@ -1,14 +1,41 @@
+### MLB ENDPOINTS
 ###
-GET http://localhost:8080/api/MLBTracker
+GET http://localhost:8080/api/MLBTracker/Scoreboard
 
 ###
-GET http://localhost:8080/api/NBATracker
+GET http://localhost:8080/api/MLBTracker/WeeklyScoreboard
+
+
+
+### NBA ENDPOINTS
+###
+GET http://localhost:8080/api/NBATracker/Scoreboard
 
 ###
-GET http://localhost:8080/api/NCAAFootballTracker
+GET http://localhost:8080/api/NBATracker/WeeklyScoreboard
+
+
+### NCAA FOOTBALL ENDPOINTS
+###
+GET http://localhost:8080/api/NCAAFootballTracker/Scoreboard
 
 ###
-GET http://localhost:8080/api/NFLTracker
+GET http://localhost:8080/api/NCAAFootballTracker/WeeklyScoreboard
+
+
+### NFL ENDPOINTS
+###
+GET http://localhost:8080/api/NFLTracker/Scoreboard
 
 ###
-GET http://localhost:8080/api/NHLTracker
+GET http://localhost:8080/api/NFLTracker/WeeklyScoreboard
+
+
+
+### NHL ENDPOINTS
+###
+GET http://localhost:8080/api/NHLTracker/Scoreboard
+
+###
+GET http://localhost:8080/api/NHLTracker/WeeklyScoreboard
+
