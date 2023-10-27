@@ -12,7 +12,7 @@ using ScoreTracker.WebApi.NHLTracker.Services;
 
 namespace ScoreTracker.WebApi.Helpers;
 
-public static class Services_Extensions
+public static class ServicesExtensions
 {
     public static void AddHttpClients(this IServiceCollection services)
     {
