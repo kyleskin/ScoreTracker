@@ -1,6 +1,7 @@
 using ScoreTracker.WebApi.DTOs;
 using ScoreTracker.WebApi.Helpers;
 using ScoreTracker.WebApi.Interfaces;
+using ScoreTracker.WebApi.NBATracker.Mappers;
 using ScoreTracker.WebApi.NBATracker.Models;
 
 namespace ScoreTracker.WebApi.NBATracker.Services;
@@ -25,10 +26,7 @@ public sealed class NBAScoreboardService : IScoreboardService<NBAScoreboardServi
 
         res.EnsureSuccessStatusCode();
 
-        var scoreboard = await res.Content.ReadFromJsonAsync<NBAScoreboard>();
-        
-        // return scoreboard ?? new NBAScoreboard();
-        return new();
+        return await res.Content.AsNBAScoreboardResponse();
     }
 
     public async Task<ScoreboardResponse> GetThisWeeksScoreboardAsync()
@@ -40,10 +38,7 @@ public sealed class NBAScoreboardService : IScoreboardService<NBAScoreboardServi
             HttpCompletionOption.ResponseHeadersRead);
 
         res.EnsureSuccessStatusCode();
-
-        var scoreboard = await res.Content.ReadFromJsonAsync<NBAScoreboard>();
-
-        // return scoreboard ?? new NBAScoreboard();
-        return new();
+        
+        return await res.Content.AsNBAScoreboardResponse();
     }
 }

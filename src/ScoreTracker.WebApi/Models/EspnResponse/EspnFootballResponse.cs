@@ -12,5 +12,5 @@ public class EspnFootballEvent : EspnEvent
 
 public class EspnFootballCompetition : EspnCompetition
 {
-    public EspnFootballSituation Situation { get; set; } = new EspnFootballSituation();
+    public EspnFootballSituation Situation { get; set; } = new();
 } 

@@ -20,7 +20,7 @@ public static class FootballMappers
 
         foreach (var @event in espnScoreboard.Events)
         {
-            FootballScoreboard scoreboard = new ()
+            FootballScoreboard scoreboard = new()
             {
                 DateTime = DateTime.Parse(@event.Date),
                 Name = @event.Name,
@@ -32,7 +32,7 @@ public static class FootballMappers
                 AwayTeam = @event.Competitions[0].Competitors
                     .Single(x => x.HomeAway == "away")
                     .ToTeam(),
-                Situation = ToFootballSituation((EspnFootballSituation)@event.Competitions[0].Situation)
+                Situation = ToFootballSituation(@event.Competitions[0].Situation)
             };
             
             scoreboardResponse.Scoreboards.Add(scoreboard);

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using ScoreTracker.WebApi.DTOs;
 using ScoreTracker.WebApi.Interfaces;
 using ScoreTracker.WebApi.NBATracker.Models;
 using ScoreTracker.WebApi.NBATracker.Services;
@@ -17,17 +18,15 @@ public class NBATrackerController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<NBAScoreboard> Scoreboard()
+    public async Task<ScoreboardResponse> Scoreboard()
     {
-        // return await _nbaScoreboardService.GetTodaysScoreboardAsync();
-        return new();
+        return await _nbaScoreboardService.GetTodaysScoreboardAsync();
     }
 
     [HttpGet]
-    public async Task<NBAScoreboard> WeeklyScoreboard()
+    public async Task<ScoreboardResponse> WeeklyScoreboard()
     {
-        // return await _nbaScoreboardService.GetThisWeeksScoreboardAsync();
-        return new();
+        return await _nbaScoreboardService.GetThisWeeksScoreboardAsync();
     }
     
 }
