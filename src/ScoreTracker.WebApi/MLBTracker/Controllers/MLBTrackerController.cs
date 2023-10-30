@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ScoreTracker.WebApi.Interfaces;
-using ScoreTracker.WebApi.MLBTracker.Models;
+using ScoreTracker.WebApi.MLBTracker.Services;
 
 namespace ScoreTracker.WebApi.MLBTracker.Controllers;
 
@@ -8,9 +8,9 @@ namespace ScoreTracker.WebApi.MLBTracker.Controllers;
 [Route("api/{controller}/{action}")]
 public class MLBTrackerController : ControllerBase
 {
-    private readonly IScoreboardService<MLBScoreboard> _scoreboardService;
+    private readonly IScoreboardService<MLBScoreboardService> _scoreboardService;
 
-    public MLBTrackerController(IScoreboardService<MLBScoreboard> scoreboardService)
+    public MLBTrackerController(IScoreboardService<MLBScoreboardService> scoreboardService)
     {
         _scoreboardService = scoreboardService;
     }

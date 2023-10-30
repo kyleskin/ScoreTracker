@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+using ScoreTracker.WebApi.DTOs;
 using ScoreTracker.WebApi.Interfaces;
 using ScoreTracker.WebApi.NHLTracker.Models;
+using ScoreTracker.WebApi.NHLTracker.Services;
 
 namespace ScoreTracker.WebApi.NHLTracker.Controllers;
 
@@ -8,22 +10,24 @@ namespace ScoreTracker.WebApi.NHLTracker.Controllers;
 [ApiController]
 public class NHLTrackerController : ControllerBase
 {
-    private readonly IScoreboardService<NHLScoreboard> _nhlScoreboardService;
+    private readonly IScoreboardService<NHLScoreboardService> _nhlScoreboardService;
 
-    public NHLTrackerController(IScoreboardService<NHLScoreboard> nhlScoreboardService)
+    public NHLTrackerController(IScoreboardService<NHLScoreboardService> nhlScoreboardService)
     {
         _nhlScoreboardService = nhlScoreboardService;
     }
 
     [HttpGet]
-    public async Task<NHLScoreboard> Scoreboard()
+    public async Task<ScoreboardResponse> Scoreboard()
     {
-        return await _nhlScoreboardService.GetTodaysScoreboardAsync();
+        // return await _nhlScoreboardService.GetTodaysScoreboardAsync();
+        return new();
     }
 
     [HttpGet]
-    public async Task<NHLScoreboard> WeeklyScoreboard()
+    public async Task<ScoreboardResponse> WeeklyScoreboard()
     {
-        return await _nhlScoreboardService.GetThisWeeksScoreboardAsync();
+        // return await _nhlScoreboardService.GetThisWeeksScoreboardAsync();
+        return new();
     }
 }

@@ -1,10 +1,11 @@
+using ScoreTracker.WebApi.DTOs;
 using ScoreTracker.WebApi.Helpers;
 using ScoreTracker.WebApi.Interfaces;
 using ScoreTracker.WebApi.NHLTracker.Models;
 
 namespace ScoreTracker.WebApi.NHLTracker.Services;
 
-public sealed class NHLScoreboardService : IScoreboardService<NHLScoreboard>
+public sealed class NHLScoreboardService : IScoreboardService<NHLScoreboardService>
 {
     private readonly HttpClient _client;
     private readonly IDateTimeProvider _dateTimeProvider;
@@ -15,7 +16,7 @@ public sealed class NHLScoreboardService : IScoreboardService<NHLScoreboard>
         _dateTimeProvider = dateTimeProvider;
     }
 
-    public async Task<NHLScoreboard> GetTodaysScoreboardAsync()
+    public async Task<ScoreboardResponse> GetTodaysScoreboardAsync()
     {
         var today = _dateTimeProvider.Today().Formatted();
         
@@ -26,10 +27,11 @@ public sealed class NHLScoreboardService : IScoreboardService<NHLScoreboard>
 
         var scoreboard = await res.Content.ReadFromJsonAsync<NHLScoreboard>();
 
-        return scoreboard ?? new NHLScoreboard();
+        // return scoreboard ?? new NHLScoreboard();
+        return new();
     }
 
-    public async Task<NHLScoreboard> GetThisWeeksScoreboardAsync()
+    public async Task<ScoreboardResponse> GetThisWeeksScoreboardAsync()
     {
         var sunday = _dateTimeProvider.Sunday().Formatted();
         var saturday = _dateTimeProvider.Saturday().Formatted();
@@ -41,6 +43,7 @@ public sealed class NHLScoreboardService : IScoreboardService<NHLScoreboard>
 
         var scoreboard = await res.Content.ReadFromJsonAsync<NHLScoreboard>();
 
-        return scoreboard ?? new NHLScoreboard();
+        // return scoreboard ?? new NHLScoreboard();
+        return new();
     }
 }

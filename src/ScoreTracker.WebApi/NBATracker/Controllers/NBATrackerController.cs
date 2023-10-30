@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ScoreTracker.WebApi.Interfaces;
 using ScoreTracker.WebApi.NBATracker.Models;
+using ScoreTracker.WebApi.NBATracker.Services;
 
 namespace ScoreTracker.WebApi.NBATracker.Controllers;
 
@@ -8,9 +9,9 @@ namespace ScoreTracker.WebApi.NBATracker.Controllers;
 [ApiController]
 public class NBATrackerController : ControllerBase
 {
-    private readonly IScoreboardService<NBAScoreboard> _nbaScoreboardService;
+    private readonly IScoreboardService<NBAScoreboardService> _nbaScoreboardService;
 
-    public NBATrackerController(IScoreboardService<NBAScoreboard> nbaScoreboardService)
+    public NBATrackerController(IScoreboardService<NBAScoreboardService> nbaScoreboardService)
     {
         _nbaScoreboardService = nbaScoreboardService;
     }
@@ -18,12 +19,15 @@ public class NBATrackerController : ControllerBase
     [HttpGet]
     public async Task<NBAScoreboard> Scoreboard()
     {
-        return await _nbaScoreboardService.GetTodaysScoreboardAsync();
+        // return await _nbaScoreboardService.GetTodaysScoreboardAsync();
+        return new();
     }
 
     [HttpGet]
     public async Task<NBAScoreboard> WeeklyScoreboard()
     {
-        return await _nbaScoreboardService.GetThisWeeksScoreboardAsync();
+        // return await _nbaScoreboardService.GetThisWeeksScoreboardAsync();
+        return new();
     }
+    
 }
