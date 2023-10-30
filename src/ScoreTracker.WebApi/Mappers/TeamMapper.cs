@@ -1,4 +1,5 @@
 using ScoreTracker.WebApi.Models;
+using ScoreTracker.WebApi.Models.EspnResponse;
 
 namespace ScoreTracker.WebApi.Mappers;
 
