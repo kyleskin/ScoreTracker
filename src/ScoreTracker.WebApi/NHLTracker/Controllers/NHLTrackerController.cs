@@ -18,16 +18,44 @@ public class NHLTrackerController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ScoreboardResponse> Scoreboard()
+    public async Task<IActionResult> Scoreboard()
     {
-        // return await _nhlScoreboardService.GetTodaysScoreboardAsync();
-        return new();
+        try
+        {
+            var scoreboards = await _nhlScoreboardService.GetTodaysScoreboardAsync();
+
+            if (scoreboards.Scoreboards.Count == 0)
+            {
+                return NoContent();
+            }
+
+            return Ok(scoreboards);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(StatusCodes.Status500InternalServerError);
+        }
     }
 
     [HttpGet]
-    public async Task<ScoreboardResponse> WeeklyScoreboard()
+    public async Task<IActionResult> WeeklyScoreboard()
     {
-        // return await _nhlScoreboardService.GetThisWeeksScoreboardAsync();
-        return new();
+        try
+        {
+            var scoreboards = await _nhlScoreboardService.GetThisWeeksScoreboardAsync();
+
+            if (scoreboards.Scoreboards.Count == 0)
+            {
+                return NoContent();
+            }
+
+            return Ok(scoreboards);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(StatusCodes.Status500InternalServerError);
+        }
     }
 }

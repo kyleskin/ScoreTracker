@@ -26,7 +26,7 @@ public sealed class NBAScoreboardService : IScoreboardService<NBAScoreboardServi
 
         res.EnsureSuccessStatusCode();
 
-        return await res.Content.AsNBAScoreboardResponse();
+        return await res.Content.AsBasketballScoreboardResponse();
     }
 
     public async Task<ScoreboardResponse> GetThisWeeksScoreboardAsync()
@@ -39,6 +39,6 @@ public sealed class NBAScoreboardService : IScoreboardService<NBAScoreboardServi
 
         res.EnsureSuccessStatusCode();
         
-        return await res.Content.AsNBAScoreboardResponse();
+        return await res.Content.AsBasketballScoreboardResponse();
     }
 }

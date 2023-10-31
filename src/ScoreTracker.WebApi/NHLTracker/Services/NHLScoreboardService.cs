@@ -1,6 +1,7 @@
 using ScoreTracker.WebApi.DTOs;
 using ScoreTracker.WebApi.Helpers;
 using ScoreTracker.WebApi.Interfaces;
+using ScoreTracker.WebApi.NHLTracker.Mappers;
 using ScoreTracker.WebApi.NHLTracker.Models;
 
 namespace ScoreTracker.WebApi.NHLTracker.Services;
@@ -25,10 +26,7 @@ public sealed class NHLScoreboardService : IScoreboardService<NHLScoreboardServi
 
         res.EnsureSuccessStatusCode();
 
-        var scoreboard = await res.Content.ReadFromJsonAsync<NHLScoreboard>();
-
-        // return scoreboard ?? new NHLScoreboard();
-        return new();
+        return await res.Content.AsHockeyScoreboardResponse();
     }
 
     public async Task<ScoreboardResponse> GetThisWeeksScoreboardAsync()
@@ -41,9 +39,6 @@ public sealed class NHLScoreboardService : IScoreboardService<NHLScoreboardServi
 
         res.EnsureSuccessStatusCode();
 
-        var scoreboard = await res.Content.ReadFromJsonAsync<NHLScoreboard>();
-
-        // return scoreboard ?? new NHLScoreboard();
-        return new();
+        return await res.Content.AsHockeyScoreboardResponse();
     }
 }

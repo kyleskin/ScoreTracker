@@ -1,3 +1,21 @@
+GET http://localhost:5005/api/NHLTracker/WeeklyScoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-31T155350.200.json
+
+###
+
+GET http://localhost:5005/api/NHLTracker/Scoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-31T155344.200.json
+
+###
+
 GET http://localhost:5005/api/MLBTracker/WeeklyScoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)

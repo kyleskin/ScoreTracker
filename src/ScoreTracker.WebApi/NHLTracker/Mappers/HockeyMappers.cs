@@ -1,17 +1,17 @@
 using ScoreTracker.WebApi.DTOs;
 using ScoreTracker.WebApi.Mappers;
-using ScoreTracker.WebApi.Models.EspnResponse;
-using ScoreTracker.WebApi.NBATracker.Models;
+using ScoreTracker.WebApi.Models;
+using ScoreTracker.WebApi.NHLTracker.Models;
 
-namespace ScoreTracker.WebApi.NBATracker.Mappers;
+namespace ScoreTracker.WebApi.NHLTracker.Mappers;
 
-public static class NBAMappers
+public static class HockeyMappers
 {
-    public static async Task<ScoreboardResponse> AsNBAScoreboardResponse(this HttpContent content)
+    public static async Task<ScoreboardResponse> AsHockeyScoreboardResponse(this HttpContent content)
     {
         ScoreboardResponse scoreboardResponse = new();
 
-        var espnScoreboard = await content.ReadFromJsonAsync<EspnBasketballResponse>();
+        var espnScoreboard = await content.ReadFromJsonAsync<EspnHockeyResponse>();
 
         if (espnScoreboard is null || espnScoreboard.Events.Count == 0)
         {
@@ -20,7 +20,7 @@ public static class NBAMappers
 
         foreach (var @event in espnScoreboard.Events)
         {
-            NBAScoreboard scoreboard = new()
+            HockeyScoreboard scoreboard = new()
             {
                 DateTime = DateTime.Parse(@event.Date),
                 Name = @event.Name,
@@ -32,7 +32,7 @@ public static class NBAMappers
                 AwayTeam = @event.Competitions[0].Competitors
                     .Single(x => x.HomeAway == "away")
                     .ToTeam(),
-                Situation = ToNBASituation(@event.Competitions[0].Situation)
+                Situation = ToHockeySituation(@event.Competitions[0].Situtation)
             };
             
             scoreboardResponse.Scoreboards.Add(scoreboard);
@@ -41,8 +41,8 @@ public static class NBAMappers
         return scoreboardResponse;
     }
 
-    private static NBASituation ToNBASituation(EspnNBASituation espnSituation)
+    private static HockeySituation ToHockeySituation(EspnHockeySituation espnSituation)
     {
-        return new NBASituation();
+        return new HockeySituation();
     }
 }
