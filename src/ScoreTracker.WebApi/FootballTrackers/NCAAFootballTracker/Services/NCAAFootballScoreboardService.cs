@@ -10,6 +10,8 @@ public class NCAAFootballScoreboardService : IScoreboardService<NCAAFootballScor
     private readonly HttpClient _client;
     private readonly IDateTimeProvider _dateTimeProvider;
 
+    private const string Uri = "apis/site/v2/sports/football/college-football/scoreboard";
+
     public NCAAFootballScoreboardService(HttpClient client, IDateTimeProvider dateTimeProvider)
     {
         _client = client;
@@ -20,7 +22,7 @@ public class NCAAFootballScoreboardService : IScoreboardService<NCAAFootballScor
     {
         var today = _dateTimeProvider.Today().Formatted();
         
-        var res = await _client.GetAsync($"apis/site/v2/sports/football/college-football/scoreboard?dates={today}",
+        var res = await _client.GetAsync($"{Uri}?dates={today}",
             HttpCompletionOption.ResponseHeadersRead);
 
         res.EnsureSuccessStatusCode();
@@ -34,7 +36,7 @@ public class NCAAFootballScoreboardService : IScoreboardService<NCAAFootballScor
         var saturday = _dateTimeProvider.Saturday().Formatted();
 
         var res = await _client.GetAsync(
-            $"apis/site/v2/sports/football/college-football/scoreboard?dates={sunday}-{saturday}",
+            $"{Uri}?dates={sunday}-{saturday}",
             HttpCompletionOption.ResponseHeadersRead);
 
         res.EnsureSuccessStatusCode();

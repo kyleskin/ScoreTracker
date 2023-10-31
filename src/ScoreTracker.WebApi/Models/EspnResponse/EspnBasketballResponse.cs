@@ -2,15 +2,15 @@ namespace ScoreTracker.WebApi.Models.EspnResponse;
 
 public class EspnBasketballResponse
 {
-    public List<EspnNBAEvent> Events { get; set; } = new();
+    public List<EspnBasketballEvent> Events { get; set; } = new();
 }
 
-public class EspnNBAEvent : EspnEvent
+public class EspnBasketballEvent : EspnEvent
 {
-    public List<EspnNBACompetition> Competitions { get; set; } = new();
+    public List<EspnBasketballCompetition> Competitions { get; set; } = new();
 }
 
-public class EspnNBACompetition : EspnCompetition
+public class EspnBasketballCompetition : EspnCompetition
 {
     public EspnNBASituation Situation { get; set; } = new();
 }

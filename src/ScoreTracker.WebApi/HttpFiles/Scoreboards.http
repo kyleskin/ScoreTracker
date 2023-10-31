@@ -1,41 +1,40 @@
 ### MLB ENDPOINTS
 ###
-GET http://localhost:5005/api/MLBTracker/Scoreboard
+GET {{host}}/MLBTracker/Scoreboard
 
 ###
-GET http://localhost:5005/api/MLBTracker/WeeklyScoreboard
+GET {{host}}/MLBTracker/WeeklyScoreboard
 
 
 
 ### NBA ENDPOINTS
 ###
-GET http://localhost:5005/api/NBATracker/Scoreboard
+GET {{host}}/NBATracker/Scoreboard
 
 ###
-GET http://localhost:5005/api/NBATracker/WeeklyScoreboard
+GET {{host}}/NBATracker/WeeklyScoreboard
 
 
 ### NCAA FOOTBALL ENDPOINTS
 ###
-GET http://localhost:5005/api/NCAAFootballTracker/Scoreboard
+GET {{host}}/NCAAFootballTracker/Scoreboard
 
 ###
-GET http://localhost:5005/api/NCAAFootballTracker/WeeklyScoreboard
+GET {{host}}/NCAAFootballTracker/WeeklyScoreboard
 
 
 ### NFL ENDPOINTS
 ###
-GET http://localhost:5005/api/NFLTracker/Scoreboard
+GET {{host}}/NFLTracker/Scoreboard
 
 ###
-GET http://localhost:5005/api/NFLTracker/WeeklyScoreboard
-
+GET {{host}}/NFLTracker/WeeklyScoreboard
 
 
 ### NHL ENDPOINTS
 ###
-GET http://localhost:5005/api/NHLTracker/Scoreboard
+GET {{host}}/NHLTracker/Scoreboard
 
 ###
-GET http://localhost:5005/api/NHLTracker/WeeklyScoreboard
+GET {{host}}/NHLTracker/WeeklyScoreboard
 

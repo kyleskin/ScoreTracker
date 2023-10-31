@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using ScoreTracker.WebApi.DTOs;
 using ScoreTracker.WebApi.Interfaces;
-using ScoreTracker.WebApi.NBATracker.Models;
 using ScoreTracker.WebApi.NBATracker.Services;
 
 namespace ScoreTracker.WebApi.NBATracker.Controllers;
@@ -18,15 +16,45 @@ public class NBATrackerController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ScoreboardResponse> Scoreboard()
+    public async Task<IActionResult> Scoreboard()
     {
-        return await _nbaScoreboardService.GetTodaysScoreboardAsync();
+        try
+        {
+            var scoreboards =  await _nbaScoreboardService.GetTodaysScoreboardAsync();
+
+            if (scoreboards.Scoreboards.Count == 0)
+            {
+                return NoContent();
+            }
+
+            return Ok(scoreboards);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
+        }
     }
 
     [HttpGet]
-    public async Task<ScoreboardResponse> WeeklyScoreboard()
+    public async Task<IActionResult> WeeklyScoreboard()
     {
-        return await _nbaScoreboardService.GetThisWeeksScoreboardAsync();
+        try
+        {
+            var scoreboards = await _nbaScoreboardService.GetThisWeeksScoreboardAsync();
+
+            if (scoreboards.Scoreboards.Count == 0)
+            {
+                return NoContent();
+            }
+
+            return Ok(scoreboards);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
+        }
     }
     
 }

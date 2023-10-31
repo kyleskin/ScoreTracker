@@ -9,6 +9,8 @@ public class NFLScoreboardService : IScoreboardService<NFLScoreboardService>
 {
     private readonly HttpClient _client;
     private readonly IDateTimeProvider _dateTimeProvider;
+    private const string Uri = "apis/site/v2/sports/football/nfl/scoreboard";
+    
 
     public NFLScoreboardService(HttpClient client, IDateTimeProvider dateTimeProvider)
     {
@@ -20,7 +22,7 @@ public class NFLScoreboardService : IScoreboardService<NFLScoreboardService>
     {
         var today = _dateTimeProvider.Today().Formatted();
         
-        var res = await _client.GetAsync($"apis/site/v2/sports/football/nfl/scoreboard?dates={today}",
+        var res = await _client.GetAsync($"{Uri}?dates={today}",
             HttpCompletionOption.ResponseHeadersRead);
 
         res.EnsureSuccessStatusCode();
@@ -33,7 +35,7 @@ public class NFLScoreboardService : IScoreboardService<NFLScoreboardService>
         var sunday = _dateTimeProvider.Sunday().Formatted();
         var saturday = _dateTimeProvider.Saturday().Formatted();
         
-        var res = await _client.GetAsync($"apis/site/v2/sports/football/nfl/scoreboard?dates={sunday}-{saturday}",
+        var res = await _client.GetAsync($"{Uri}?dates={sunday}-{saturday}",
             HttpCompletionOption.ResponseHeadersRead);
 
         res.EnsureSuccessStatusCode();

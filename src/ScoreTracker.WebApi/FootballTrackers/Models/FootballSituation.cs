@@ -1,8 +1,6 @@
-using ScoreTracker.WebApi.Models.EspnResponse;
-
 namespace ScoreTracker.WebApi.FootballTrackers.Models;
 
-public sealed class FootballSituation : EspnSituation
+public sealed class FootballSituation
 {
     public int Down { get; set; }
     public int YardLine { get; set; }

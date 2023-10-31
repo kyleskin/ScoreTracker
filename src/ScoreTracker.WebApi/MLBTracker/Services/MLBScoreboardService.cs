@@ -1,7 +1,7 @@
 using ScoreTracker.WebApi.DTOs;
 using ScoreTracker.WebApi.Helpers;
 using ScoreTracker.WebApi.Interfaces;
-using ScoreTracker.WebApi.MLBTracker.Models;
+using ScoreTracker.WebApi.MLBTracker.Mappers;
 
 namespace ScoreTracker.WebApi.MLBTracker.Services;
 
@@ -9,6 +9,7 @@ public class MLBScoreboardService : IScoreboardService<MLBScoreboardService>
 {
     private readonly HttpClient _client;
     private readonly IDateTimeProvider _dateTimeProvider;
+    private const string Uri = "apis/site/v2/sports/baseball/mlb/scoreboard";
 
     public MLBScoreboardService(HttpClient client, IDateTimeProvider dateTimeProvider)
     {
@@ -20,15 +21,12 @@ public class MLBScoreboardService : IScoreboardService<MLBScoreboardService>
     {
         var today = _dateTimeProvider.Today().Formatted();
         
-        var res = await _client.GetAsync($"apis/site/v2/sports/baseball/mlb/scoreboard?dates={today}",
+        var res = await _client.GetAsync($"{Uri}?dates={today}",
             HttpCompletionOption.ResponseHeadersRead);
 
         res.EnsureSuccessStatusCode();
 
-        var scoreboard = await res.Content.ReadFromJsonAsync<MLBScoreboard>();
-        
-        // return scoreboard ?? new MLBScoreboard();
-        return new();
+        return await res.Content.AsBaseballScoreboardResponse();
     }
 
     public async Task<ScoreboardResponse> GetThisWeeksScoreboardAsync()
@@ -36,14 +34,11 @@ public class MLBScoreboardService : IScoreboardService<MLBScoreboardService>
         var sunday = _dateTimeProvider.Sunday().Formatted();
         var saturday = _dateTimeProvider.Saturday().Formatted();
 
-        var res = await _client.GetAsync($"apis/site/v2/sports/baseball/mlb/scoreboard?dates={sunday}-{saturday}",
+        var res = await _client.GetAsync($"{Uri}?dates={sunday}-{saturday}",
             HttpCompletionOption.ResponseHeadersRead);
 
         res.EnsureSuccessStatusCode();
 
-        var scoreboard = await res.Content.ReadFromJsonAsync<MLBScoreboard>();
-
-        // return scoreboard ?? new MLBScoreboard();
-        return new();
+        return await res.Content.AsBaseballScoreboardResponse();
     }
 }

@@ -18,12 +18,43 @@ public class MLBTrackerController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> Scoreboard()
     {
-        return Ok(await _scoreboardService.GetTodaysScoreboardAsync());
+        try
+        {
+            var scoreboards = await _scoreboardService.GetTodaysScoreboardAsync();
+
+            if (scoreboards.Scoreboards.Count == 0)
+            {
+                return NoContent();
+            }
+
+            return Ok(scoreboards);
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(StatusCodes.Status500InternalServerError);
+        }
     }
 
     [HttpGet]
     public async Task<IActionResult> WeeklyScoreboard()
     {
-        return Ok(await _scoreboardService.GetThisWeeksScoreboardAsync());
+        try
+        {
+            var scoreboards = await _scoreboardService.GetThisWeeksScoreboardAsync();
+
+            if (scoreboards.Scoreboards.Count == 0)
+            {
+                return NoContent();
+            }
+
+            return Ok(scoreboards);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(StatusCodes.Status500InternalServerError);
+        }
     }
 }
