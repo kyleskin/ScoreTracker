@@ -1,4 +1,4 @@
-namespace ScoreTracker.WebApi.Models.EspnResponse;
+namespace ScoreTracker.WebApi.DTOs.EspnResponse;
 
 public class EspnBaseballReponse
 {

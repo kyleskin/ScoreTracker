@@ -1,6 +1,4 @@
-using ScoreTracker.WebApi.Models.EspnResponse;
-
-namespace ScoreTracker.WebApi.Models;
+namespace ScoreTracker.WebApi.DTOs.EspnResponse;
 
 public class EspnHockeyResponse
 {

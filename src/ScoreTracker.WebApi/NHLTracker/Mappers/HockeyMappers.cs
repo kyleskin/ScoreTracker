@@ -1,4 +1,5 @@
 using ScoreTracker.WebApi.DTOs;
+using ScoreTracker.WebApi.DTOs.EspnResponse;
 using ScoreTracker.WebApi.Mappers;
 using ScoreTracker.WebApi.Models;
 using ScoreTracker.WebApi.NHLTracker.Models;

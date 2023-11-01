@@ -1,6 +1,6 @@
 using ScoreTracker.WebApi.DTOs;
+using ScoreTracker.WebApi.DTOs.EspnResponse;
 using ScoreTracker.WebApi.Mappers;
-using ScoreTracker.WebApi.Models.EspnResponse;
 using ScoreTracker.WebApi.NBATracker.Models;
 
 namespace ScoreTracker.WebApi.NBATracker.Mappers;

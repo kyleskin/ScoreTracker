@@ -1,6 +1,6 @@
-namespace ScoreTracker.WebApi.Models.EspnResponse;
+namespace ScoreTracker.WebApi.DTOs.EspnResponse;
 
-public class Competitor
+public class EspnCompetitor
 {
     public string HomeAway { get; set; } = string.Empty;
     public EspnTeam Team { get; set; } = new();

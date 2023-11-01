@@ -3,7 +3,7 @@ Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T155350.200.json
+<> 2023-11-01T105240-2.200.json
 
 ###
 
@@ -12,7 +12,59 @@ Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T155344.200.json
+<> 2023-11-01T105240-1.200.json
+
+###
+
+GET http://localhost:5005/api/NFLTracker/WeeklyScoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T105240.200.json
+
+###
+
+GET http://localhost:5005/api/NFLTracker/Scoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:5005/api/NCAAFootballTracker/WeeklyScoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T105239-1.200.json
+
+###
+
+GET http://localhost:5005/api/NCAAFootballTracker/Scoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T105239.200.json
+
+###
+
+GET http://localhost:5005/api/NBATracker/WeeklyScoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T105238-2.200.json
+
+###
+
+GET http://localhost:5005/api/NBATracker/Scoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T105238-1.200.json
 
 ###
 
@@ -21,7 +73,7 @@ Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T152449.200.json
+<> 2023-11-01T105238.200.json
 
 ###
 
@@ -30,390 +82,369 @@ Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T152444.200.json
+<> 2023-11-01T105237.200.json
 
 ###
 
-GET http://localhost:5005/api/NCAAFootballTracker/WeeklyScoreboard
+GET http://localhost:8080/api/NHLTracker/WeeklyScoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T140038.200.json
+<> 2023-11-01T105126-1.200.json
 
 ###
 
-GET http://localhost:5005/api/NCAAFootballTracker/Scoreboard
+GET http://localhost:8080/api/NHLTracker/Scoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T140032.200.json
+<> 2023-11-01T105126.200.json
 
 ###
 
-GET http://localhost:5005/api/NCAAFootballTracker/WeeklyScoreboard
+GET http://localhost:8080/api/NFLTracker/WeeklyScoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T105125-2.200.json
+
+###
+
+GET http://localhost:8080/api/NFLTracker/Scoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 ###
 
-GET http://localhost:5005/api/NCAAFootballTracker/Scoreboard
+GET http://localhost:8080/api/NCAAFootballTracker/WeeklyScoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T105125-1.200.json
+
+###
+
+GET http://localhost:8080/api/NCAAFootballTracker/Scoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T105125.200.json
+
+###
+
+GET http://localhost:8080/api/NBATracker/WeeklyScoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T105124-1.200.json
+
+###
+
+GET http://localhost:8080/api/NBATracker/Scoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T105124.200.json
+
+###
+
+GET http://localhost:8080/api/MLBTracker/WeeklyScoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T105123-1.200.json
+
+###
+
+GET http://localhost:8080/api/MLBTracker/Scoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T105123.200.json
+
+###
+
+GET http://localhost:8080/api/MLBTracker/Scoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T105029.200.json
+
+###
+
+GET http://localhost:8080/api/MLBTracker/WeeklyScoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T104503.200.json
+
+###
+
+GET http://localhost:8080/api/NHLTracker/WeeklyScoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T104451-2.200.json
+
+###
+
+GET http://localhost:8080/api/NHLTracker/Scoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T104451-1.200.json
+
+###
+
+GET http://localhost:8080/api/NFLTracker/WeeklyScoreboard
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-01T104451.200.json
+
+###
+
+GET http://localhost:8080/api/NFLTracker/Scoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 ###
 
-GET http://localhost:5005/api/NBATracker/Scoreboard
+GET http://localhost:8080/api/NCAAFootballTracker/WeeklyScoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T133725.200.json
+<> 2023-11-01T104450-1.200.json
 
 ###
 
-GET http://localhost:5005/api/NCAAFootballTracker/WeeklyScoreboard
+GET http://localhost:8080/api/NCAAFootballTracker/Scoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T132447.200.json
+<> 2023-11-01T104450.200.json
 
 ###
 
-GET http://localhost:5005/api/NBATracker/Scoreboard
+GET http://localhost:8080/api/NBATracker/WeeklyScoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T132411.200.json
+<> 2023-11-01T104449-2.200.json
 
 ###
 
-GET http://localhost:5005/api/MLBTracker/Scoreboard
+GET http://localhost:8080/api/NBATracker/Scoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T132334.200.json
+<> 2023-11-01T104449-1.200.json
 
 ###
 
-GET http://localhost:5005/api/NCAAFootballTracker/WeeklyScoreboard
+GET http://localhost:8080/api/MLBTracker/WeeklyScoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T131805.200.json
+<> 2023-11-01T104449.200.json
 
 ###
 
-GET http://localhost:5005/api/NCAAFootballTracker/Scoreboard
+GET http://localhost:8080/api/MLBTracker/Scoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T131800.200.json
+<> 2023-11-01T104448.500.json
 
 ###
 
-GET http://localhost:5005/api/NFLTracker/WeeklyScoreboard
+GET http://localhost:8080/api/MLBTracker/Scoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T094807.200.json
+<> 2023-11-01T104250.500.json
 
 ###
 
-GET http://localhost:5005/api/NFLTracker/Scoreboard
+GET http://localhost:8080/api/MLBTracker/WeeklyScoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T094803.200.json
+<> 2023-11-01T104248.200.json
 
 ###
 
-GET http://localhost:5005/api/NCAAFootballTracker/WeeklyScoreboard
+GET http://localhost:8080/api/MLBTracker/Scoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T094758.200.json
+<> 2023-11-01T102529.500.json
 
 ###
 
-GET http://localhost:5005/api/NCAAFootballTracker/Scoreboard
+GET http://localhost:8080/api/MLBTracker/Scoreboard
+Content-Length: 116
+Content-Type: */*; charset=UTF-8
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-31T094749.200.json
+{%
+  client.test("Request executed successfully", function() {
+      client.assert(response.status === 200)
+  });
+%}
+
+<> 2023-11-01T102524.500.json
 
 ###
 
-GET http://localhost:5005/api/NCAAFootballTracker/WeeklyScoreboard
+GET http://localhost:8080/api/NHLTracker/WeeklyScoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-30T161626.200.json
+<> 2023-11-01T102506-2.200.json
 
 ###
 
-GET http://localhost:5005/api/NFLTracker/Scoreboard
+GET http://localhost:8080/api/NHLTracker/Scoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-30T161622.200.json
+<> 2023-11-01T102506-1.200.json
 
 ###
 
-GET http://localhost:5005/api/NBATracker/Scoreboard
+GET http://localhost:8080/api/NFLTracker/WeeklyScoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-30T161617.200.json
+<> 2023-11-01T102506.200.json
 
 ###
 
-GET http://localhost:5005/api/NFLTracker/Scoreboard
+GET http://localhost:8080/api/NFLTracker/Scoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-30T152417.200.json
 
 ###
 
-GET http://localhost:5005/api/NBATracker/Scoreboard
+GET http://localhost:8080/api/NCAAFootballTracker/WeeklyScoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-30T152354.200.json
+<> 2023-11-01T102505-1.200.json
 
 ###
 
-GET http://localhost:5005/api/NBATracker/WeeklyScoreboard
+GET http://localhost:8080/api/NCAAFootballTracker/Scoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-30T142602.200.json
+<> 2023-11-01T102505.200.json
 
 ###
 
-GET http://localhost:5005/api/NBATracker/Scoreboard
+GET http://localhost:8080/api/NBATracker/WeeklyScoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-30T142553.200.json
+<> 2023-11-01T102504-2.200.json
 
 ###
 
-GET http://localhost:5005/api/NBATracker/WeeklyScoreboard
+GET http://localhost:8080/api/NBATracker/Scoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-30T142424.500.txt
+<> 2023-11-01T102504-1.200.json
 
 ###
 
-GET http://localhost:5005/api/NBATracker/Scoreboard
+GET http://localhost:8080/api/MLBTracker/WeeklyScoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-30T142414.500.txt
+<> 2023-11-01T102504.200.json
 
 ###
 
-GET http://localhost:5005/api/NBATracker/Scoreboard
+GET http://localhost:8080/api/MLBTracker/Scoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-30T142112.200.json
+<> 2023-11-01T102503.500.json
 
 ###
 
-GET http://localhost:5005/api/NBATracker/WeeklyScoreboard
+GET http://localhost:8080/api/MLBTracker/Scoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-30T141840.200.json
+<> 2023-11-01T102459.500.json
 
 ###
 
-GET http://localhost:5005/api/NBATracker/Scoreboard
+GET http://localhost:8080/api/NHLTracker/WeeklyScoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-30T141822.200.json
+<> 2023-11-01T102147-1.200.json
 
 ###
 
-GET http://localhost:5005/api/NBATracker/Scoreboard
+GET http://localhost:8080/api/NHLTracker/Scoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-30T141600.200.json
+<> 2023-11-01T102147.200.json
 
 ###
 
-GET http://localhost:5005/api/NBATracker/WeeklyScoreboard
+GET http://localhost:8080/api/NFLTracker/WeeklyScoreboard
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
-<> 2023-10-30T141318.200.json
-
-###
-
-GET http://localhost:5005/api/NBATracker/Scoreboard
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-30T141307.200.json
-
-###
-
-GET http://localhost:5005/api/NFLTracker/WeeklyScoreboard
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-30T110143.200.json
-
-###
-
-GET http://localhost:5005/api/NFLTracker/WeeklyScoreboard
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-30T104943.200.json
-
-###
-
-GET http://localhost:5005/api/NFLTracker/WeeklyScoreboard
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-30T104757.500.txt
-
-###
-
-GET http://localhost:5005/api/NFLTracker/WeeklyScoreboard
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-30T101608.500.txt
-
-###
-
-GET http://localhost:5005/api/NFLTracker/WeeklyScoreboard
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-30T100947.500.txt
-
-###
-
-GET http://localhost:5005/api/NFLTracker/Scoreboard
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-30T100812.200.json
-
-###
-
-GET http://localhost:5005/api/NCAAFootballTracker/WeeklyScoreboard
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-30T100754.200.json
-
-###
-
-GET http://localhost:5005/api/NFLTracker/WeeklyScoreboard
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-30T100748.500.txt
-
-###
-
-GET http://localhost:5005/api/NCAAFootballTracker/Scoreboard
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-30T100743.200.json
-
-###
-
-GET http://localhost:5005/api/NCAAFootballTracker/WeeklyScoreboard
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-30T100547.200.json
-
-###
-
-GET http://localhost:5005/api/NCAAFootballTracker/WeeklyScoreboard
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-30T100210.200.json
-
-###
-
-GET http://localhost:5005/api/NCAAFootballTracker/Scoreboard
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-28T212542.500.txt
-
-###
-
-GET http://localhost:5005/api/NCAAFootballTracker/Scoreboard
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-28T212439.500.txt
-
-###
-
-GET http://localhost:5005/api/NCAAFootballTracker/Scoreboard
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-10-28T212337.500.txt
+<> 2023-11-01T102146-1.200.json
 
 ###
 

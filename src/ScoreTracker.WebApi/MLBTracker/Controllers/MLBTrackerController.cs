@@ -28,7 +28,6 @@ public class MLBTrackerController : ControllerBase
             }
 
             return Ok(scoreboards);
-
         }
         catch (Exception e)
         {
