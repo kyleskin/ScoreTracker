@@ -7,16 +7,9 @@ namespace ScoreTracker.WebApi.FootballTrackers.Mappers;
 
 public static class FootballMappers
 {
-    public static async Task<ScoreboardResponse> AsFootballScoreboardResponse(this HttpContent content)
+    public static ScoreboardResponse AsFootballScoreboardResponse(this EspnFootballResponse espnScoreboard)
     {
         ScoreboardResponse scoreboardResponse = new();
-         
-        var espnScoreboard = await content.ReadFromJsonAsync<EspnFootballResponse>();
-
-        if (espnScoreboard is null || espnScoreboard.Events.Count == 0)
-        {
-            return new ScoreboardResponse();
-        }
 
         foreach (var @event in espnScoreboard.Events)
         {
