@@ -1,0 +1,20 @@
+### MLB ENDPOINTS
+###
+# @name MLB Daily Scoreboard 
+GET {{host}}/MLBTracker/Scoreboard
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200 || response.status === 204)
+    });
+%}
+
+###
+# @name MLB Weekly Scoreboard
+GET {{host}}/MLBTracker/WeeklyScoreboard
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200 || response.status === 204)
+    });
+%}

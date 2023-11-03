@@ -1,0 +1,39 @@
+### NCAA FOOTBALL ENDPOINTS
+###
+# @name NCAA Football Daily Scoreboard
+GET {{host}}/NCAAFootballTracker/Scoreboard
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200 || response.status === 204)
+    });
+%}
+###
+# @name NCAA Football Weekly Scoreboard
+GET {{host}}/NCAAFootballTracker/WeeklyScoreboard
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200 || response.status === 204)
+    });
+%}
+
+### NFL ENDPOINTS
+###
+# @name NFL Daily Scoreboard
+GET {{host}}/NFLTracker/Scoreboard
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200 || response.status === 204)
+    });
+%}
+###
+# @name NFL Weekly Scoreboard
+GET {{host}}/NFLTracker/WeeklyScoreboard
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200 || response.status === 204)
+    });
+%}

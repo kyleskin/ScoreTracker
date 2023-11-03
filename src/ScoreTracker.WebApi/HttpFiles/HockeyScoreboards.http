@@ -1,0 +1,20 @@
+### NHL ENDPOINTS
+###
+# @name NHL Daily Scoreboard
+GET {{host}}/NHLTracker/Scoreboard
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200 || response.status === 204)
+    });
+%}
+
+###
+# @name NHL Weekly Scoreboard
+GET {{host}}/NHLTracker/WeeklyScoreboard
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200 || response.status === 204)
+    });
+%}

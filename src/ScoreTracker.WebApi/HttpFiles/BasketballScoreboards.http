@@ -1,0 +1,41 @@
+### NBA ENDPOINTS
+###
+# @name NBA Daily Scoreboard
+GET {{host}}/NBATracker/Scoreboard
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200 || response.status === 204)
+    });
+%}
+
+###
+# @name NBA Weekly Scoreboard
+GET {{host}}/NBATracker/WeeklyScoreboard
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200 || response.status === 204)
+    });
+%}
+
+### NCAA MENS ENDPOINTS
+###
+# @name NCAA Mens Daily Scoreboard
+GET {{host}}/NCAAMensBasketballTracker/Scoreboard
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200 || response.status === 204)
+    });
+%}
+
+###
+# @name NCAA Mens Weekly Scoreboard
+GET {{host}}/NCAAMensBasketballTracker/WeeklyScoreboard
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200 || response.status === 204)
+    });
+%}
