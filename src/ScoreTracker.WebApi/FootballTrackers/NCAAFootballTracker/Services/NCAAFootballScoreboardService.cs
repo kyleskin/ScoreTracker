@@ -16,7 +16,10 @@ public class NCAAFootballScoreboardService : IScoreboardService<NCAAFootballScor
     private const string BaseUri = "http://site.api.espn.com";
     private const string PathSegment = "apis/site/v2/sports/football/college-football/scoreboard";
 
-    public NCAAFootballScoreboardService(IFlurlClientFactory flurlClientFactory, IDateTimeProvider dateTimeProvider)
+    public NCAAFootballScoreboardService(
+        IFlurlClientFactory flurlClientFactory,
+        IDateTimeProvider dateTimeProvider
+    )
     {
         _client = flurlClientFactory.Get(BaseUri);
         _dateTimeProvider = dateTimeProvider;
@@ -37,7 +40,7 @@ public class NCAAFootballScoreboardService : IScoreboardService<NCAAFootballScor
         }
         catch (FlurlHttpException e)
         {
-            Console.WriteLine($"Error returned from {e.Call.Request.Url} {e.Message}");
+            Console.WriteLine($"Error returned from {e.Call.Request.Url}: {e.Message}");
             throw;
         }
     }
