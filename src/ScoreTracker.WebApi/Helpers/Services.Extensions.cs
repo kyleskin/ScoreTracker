@@ -1,9 +1,9 @@
 using Flurl.Http.Configuration;
+using ScoreTracker.WebApi.BasketballTrackers.NBATracker.Services;
 using ScoreTracker.WebApi.FootballTrackers.NCAAFootballTracker.Services;
 using ScoreTracker.WebApi.FootballTrackers.NFLTracker.Services;
 using ScoreTracker.WebApi.Interfaces;
 using ScoreTracker.WebApi.MLBTracker.Services;
-using ScoreTracker.WebApi.NBATracker.Services;
 using ScoreTracker.WebApi.NHLTracker.Services;
 
 namespace ScoreTracker.WebApi.Helpers;
@@ -15,18 +15,11 @@ public static class ServicesExtensions
         const string espnBaseSite = "http://site.api.espn.com";
 
         services.AddSingleton<IFlurlClientFactory, PerBaseUrlFlurlClientFactory>();
-        
-        services.AddHttpClient<IScoreboardService<MLBScoreboardService>, MLBScoreboardService>(client =>
-        {
-            client.BaseAddress = new Uri(espnBaseSite);
-        });
 
-        services.AddHttpClient<IScoreboardService<NBAScoreboardService>, NBAScoreboardService>(client =>
-        {
-            client.BaseAddress = new Uri(espnBaseSite);
-        });
-        
-        services.AddHttpClient<IScoreboardService<NHLScoreboardService>, NHLScoreboardService>(client =>
+        services.AddHttpClient<
+            IScoreboardService<NHLScoreboardService>,
+            NHLScoreboardService
+        >(client =>
         {
             client.BaseAddress = new Uri(espnBaseSite);
         });
@@ -36,7 +29,10 @@ public static class ServicesExtensions
     {
         services.AddScoped<IScoreboardService<MLBScoreboardService>, MLBScoreboardService>();
         services.AddScoped<IScoreboardService<NBAScoreboardService>, NBAScoreboardService>();
-        services.AddScoped<IScoreboardService<NCAAFootballScoreboardService>, NCAAFootballScoreboardService>();
+        services.AddScoped<
+            IScoreboardService<NCAAFootballScoreboardService>,
+            NCAAFootballScoreboardService
+        >();
         services.AddScoped<IScoreboardService<NFLScoreboardService>, NFLScoreboardService>();
         services.AddScoped<IScoreboardService<NHLScoreboardService>, NHLScoreboardService>();
     }

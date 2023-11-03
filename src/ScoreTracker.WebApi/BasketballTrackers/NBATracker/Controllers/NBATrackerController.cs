@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+using ScoreTracker.WebApi.BasketballTrackers.NBATracker.Services;
 using ScoreTracker.WebApi.Interfaces;
-using ScoreTracker.WebApi.NBATracker.Services;
 
-namespace ScoreTracker.WebApi.NBATracker.Controllers;
+namespace ScoreTracker.WebApi.BasketballTrackers.NBATracker.Controllers;
 
 [Route("api/{controller}/{action}")]
 [ApiController]
