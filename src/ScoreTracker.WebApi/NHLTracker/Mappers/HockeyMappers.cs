@@ -8,34 +8,30 @@ namespace ScoreTracker.WebApi.NHLTracker.Mappers;
 
 public static class HockeyMappers
 {
-    public static async Task<ScoreboardResponse> AsHockeyScoreboardResponse(this HttpContent content)
+    public static ScoreboardResponse AsHockeyScoreboardResponse(
+        this EspnHockeyResponse espnScoreboard
+    )
     {
         ScoreboardResponse scoreboardResponse = new();
 
-        var espnScoreboard = await content.ReadFromJsonAsync<EspnHockeyResponse>();
-
-        if (espnScoreboard is null || espnScoreboard.Events.Count == 0)
-        {
-            return new ScoreboardResponse();
-        }
-
         foreach (var @event in espnScoreboard.Events)
         {
-            HockeyScoreboard scoreboard = new()
-            {
-                DateTime = DateTime.Parse(@event.Date),
-                Name = @event.Name,
-                ShortName = @event.ShortName,
-                Status = @event.Competitions[0].Status.ToStatus(),
-                HomeTeam = @event.Competitions[0].Competitors
-                    .Single(x => x.HomeAway == "home")
-                    .ToTeam(),
-                AwayTeam = @event.Competitions[0].Competitors
-                    .Single(x => x.HomeAway == "away")
-                    .ToTeam(),
-                Situation = ToHockeySituation(@event.Competitions[0].Situtation)
-            };
-            
+            HockeyScoreboard scoreboard =
+                new()
+                {
+                    DateTime = DateTime.Parse(@event.Date),
+                    Name = @event.Name,
+                    ShortName = @event.ShortName,
+                    Status = @event.Competitions[0].Status.ToStatus(),
+                    HomeTeam = @event.Competitions[0].Competitors
+                        .Single(x => x.HomeAway == "home")
+                        .ToTeam(),
+                    AwayTeam = @event.Competitions[0].Competitors
+                        .Single(x => x.HomeAway == "away")
+                        .ToTeam(),
+                    Situation = ToHockeySituation(@event.Competitions[0].Situtation)
+                };
+
             scoreboardResponse.Scoreboards.Add(scoreboard);
         }
 
