@@ -1,4 +1,8 @@
+using Flurl;
+using Flurl.Http;
+using Flurl.Http.Configuration;
 using ScoreTracker.WebApi.DTOs;
+using ScoreTracker.WebApi.DTOs.EspnResponse;
 using ScoreTracker.WebApi.Helpers;
 using ScoreTracker.WebApi.Interfaces;
 using ScoreTracker.WebApi.MLBTracker.Mappers;
@@ -7,26 +11,38 @@ namespace ScoreTracker.WebApi.MLBTracker.Services;
 
 public class MLBScoreboardService : IScoreboardService<MLBScoreboardService>
 {
-    private readonly HttpClient _client;
+    private readonly IFlurlClient _client;
     private readonly IDateTimeProvider _dateTimeProvider;
-    private const string Uri = "apis/site/v2/sports/baseball/mlb/scoreboard";
+    private const string BaseUri = "http://site.api.espn.com";
+    private const string PathSegment = "apis/site/v2/sports/baseball/mlb/scoreboard";
 
-    public MLBScoreboardService(HttpClient client, IDateTimeProvider dateTimeProvider)
+    public MLBScoreboardService(
+        IFlurlClientFactory flurlClientFactory,
+        IDateTimeProvider dateTimeProvider
+    )
     {
-        _client = client;
+        _client = flurlClientFactory.Get(BaseUri);
         _dateTimeProvider = dateTimeProvider;
     }
 
     public async Task<ScoreboardResponse> GetTodaysScoreboardAsync()
     {
         var today = _dateTimeProvider.Today().Formatted();
-        
-        var res = await _client.GetAsync($"{Uri}?dates={today}",
-            HttpCompletionOption.ResponseHeadersRead);
 
-        res.EnsureSuccessStatusCode();
+        try
+        {
+            var res = await _client.BaseUrl
+                .AppendPathSegment(PathSegment)
+                .SetQueryParam("dates", today)
+                .GetJsonAsync<EspnBaseballReponse>();
 
-        return await res.Content.AsBaseballScoreboardResponse();
+            return res.AsBaseballScoreboardResponse();
+        }
+        catch (FlurlHttpException e)
+        {
+            Console.WriteLine($"Error returned from {e.Call.Request.Url}: {e.Message}");
+            throw;
+        }
     }
 
     public async Task<ScoreboardResponse> GetThisWeeksScoreboardAsync()
@@ -34,11 +50,19 @@ public class MLBScoreboardService : IScoreboardService<MLBScoreboardService>
         var sunday = _dateTimeProvider.Sunday().Formatted();
         var saturday = _dateTimeProvider.Saturday().Formatted();
 
-        var res = await _client.GetAsync($"{Uri}?dates={sunday}-{saturday}",
-            HttpCompletionOption.ResponseHeadersRead);
+        try
+        {
+            var res = await _client.BaseUrl
+                .AppendPathSegment(PathSegment)
+                .SetQueryParam("dates", $"{sunday}-{saturday}")
+                .GetJsonAsync<EspnBaseballReponse>();
 
-        res.EnsureSuccessStatusCode();
-
-        return await res.Content.AsBaseballScoreboardResponse();
+            return res.AsBaseballScoreboardResponse();
+        }
+        catch (FlurlHttpException e)
+        {
+            Console.WriteLine($"Error returned from {e.Call.Request.Url}: {e.Message}");
+            throw;
+        }
     }
 }
