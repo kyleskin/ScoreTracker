@@ -7,27 +7,30 @@ namespace ScoreTracker.WebApi.FootballTrackers.Mappers;
 
 public static class FootballMappers
 {
-    public static ScoreboardResponse AsFootballScoreboardResponse(this EspnFootballResponse espnScoreboard)
+    public static ScoreboardResponse AsFootballScoreboardResponse(
+        this EspnFootballResponse espnScoreboard
+    )
     {
         ScoreboardResponse scoreboardResponse = new();
 
         foreach (var @event in espnScoreboard.Events)
         {
-            FootballScoreboard scoreboard = new()
-            {
-                DateTime = DateTime.Parse(@event.Date),
-                Name = @event.Name,
-                ShortName = @event.ShortName,
-                Status = @event.Competitions[0].Status.ToStatus(),
-                HomeTeam = @event.Competitions[0].Competitors
-                    .Single(x => x.HomeAway == "home")
-                    .ToTeam(),
-                AwayTeam = @event.Competitions[0].Competitors
-                    .Single(x => x.HomeAway == "away")
-                    .ToTeam(),
-                Situation = ToFootballSituation(@event.Competitions[0].Situation)
-            };
-            
+            FootballScoreboard scoreboard =
+                new()
+                {
+                    DateTime = DateTime.Parse(@event.Date),
+                    Name = @event.Name,
+                    ShortName = @event.ShortName,
+                    Status = @event.Competitions[0].Status.ToStatus(),
+                    HomeTeam = @event.Competitions[0].Competitors
+                        .Single(x => x.HomeAway == "home")
+                        .ToTeam(),
+                    AwayTeam = @event.Competitions[0].Competitors
+                        .Single(x => x.HomeAway == "away")
+                        .ToTeam(),
+                    Situation = ToFootballSituation(@event.Competitions[0].Situation)
+                };
+
             scoreboardResponse.Scoreboards.Add(scoreboard);
         }
 
