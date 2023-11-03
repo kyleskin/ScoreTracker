@@ -1,16 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
-using ScoreTracker.WebApi.BasketballTrackers.NBATracker.Services;
+using ScoreTracker.WebApi.BasketballTrackers.NCAAMensBasketballTracker.Services;
 using ScoreTracker.WebApi.Interfaces;
 
-namespace ScoreTracker.WebApi.BasketballTrackers.NBATracker.Controllers;
+namespace ScoreTracker.WebApi.BasketballTrackers.NCAAMensBasketballTracker.Controllers;
 
 [Route("api/{controller}/{action}")]
 [ApiController]
-public class NBATrackerController : ControllerBase
+public class NCAAMensBasketballTrackerController : ControllerBase
 {
-    private readonly IScoreboardService<NBAScoreboardService> _scoreboardService;
+    private readonly IScoreboardService<NCAAMensBasketballService> _scoreboardService;
 
-    public NBATrackerController(IScoreboardService<NBAScoreboardService> scoreboardService)
+    public NCAAMensBasketballTrackerController(
+        IScoreboardService<NCAAMensBasketballService> scoreboardService
+    )
     {
         _scoreboardService = scoreboardService;
     }

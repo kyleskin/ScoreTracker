@@ -1,5 +1,6 @@
 using Flurl.Http.Configuration;
 using ScoreTracker.WebApi.BasketballTrackers.NBATracker.Services;
+using ScoreTracker.WebApi.BasketballTrackers.NCAAMensBasketballTracker.Services;
 using ScoreTracker.WebApi.FootballTrackers.NCAAFootballTracker.Services;
 using ScoreTracker.WebApi.FootballTrackers.NFLTracker.Services;
 using ScoreTracker.WebApi.Interfaces;
@@ -12,23 +13,17 @@ public static class ServicesExtensions
 {
     public static void AddHttpClients(this IServiceCollection services)
     {
-        const string espnBaseSite = "http://site.api.espn.com";
-
         services.AddSingleton<IFlurlClientFactory, PerBaseUrlFlurlClientFactory>();
-
-        services.AddHttpClient<
-            IScoreboardService<NHLScoreboardService>,
-            NHLScoreboardService
-        >(client =>
-        {
-            client.BaseAddress = new Uri(espnBaseSite);
-        });
     }
 
     public static void AddScoreboardServices(this IServiceCollection services)
     {
         services.AddScoped<IScoreboardService<MLBScoreboardService>, MLBScoreboardService>();
         services.AddScoped<IScoreboardService<NBAScoreboardService>, NBAScoreboardService>();
+        services.AddScoped<
+            IScoreboardService<NCAAMensBasketballService>,
+            NCAAMensBasketballService
+        >();
         services.AddScoped<
             IScoreboardService<NCAAFootballScoreboardService>,
             NCAAFootballScoreboardService
